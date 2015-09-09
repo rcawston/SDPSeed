@@ -1,0 +1,44 @@
+min_peers_seed = 10
+max_peers_seed = 100
+
+max_uploads_global = 200
+download_rate = 0
+upload_rate = 0
+
+directory = /tmp/
+session = ~/.rtorrent
+
+trackers.use_udp.set = yes
+network.port_range.set = 51000-52000
+
+# Watch a directory for new torrents, and stop those that have been
+# deleted.
+schedule = watch_directory,5,5,"load.start=/var/sdpseed/watch/*.torrent,\"d.directory_base.set=\\\"$execute.capture=/home/seeder/repath.sh,$d.name=\\\"\""
+schedule = untied_directory,5,5,stop_untied=
+
+# Periodically save session data
+schedule = session.save,240,300,session.save=
+
+# logging - disabled to prevent slowdowns; uncomment to enable for debugging
+#log.open_file = "rtorrent.log", "/home/seeder/rtorrent/rtorrent.log"
+#log.add_output = "connection_debug", "rtorrent.log"
+#log.add_output = "dht_debug", "rtorrent.log"
+#log.add_output = "peer_debug", "rtorrent.log"
+#log.add_output = "storage_debug", "rtorrent.log"
+#log.add_output = "thread_debug", "rtorrent.log"
+#log.add_output = "tracker_debug", "rtorrent.log"
+#log.add_output = "torrent_debug", "rtorrent.log"
+#log.execute = "log_resume_data", "rtorrent.log"
+
+max_memory_usage = 10737418240
+
+check_hash = no
+
+pieces.preload.type.set = 0
+
+network.send_buffer.size.set = 1M
+network.receive_buffer.size.set = 131072
+
+pieces.sync.always_safe.set = yes
+pieces.sync.timeout.set = 600
+pieces.sync.timeout_safe.set = 900

@@ -1,0 +1,1 @@
+//SERVERHOSTNAME/SERVERSHARE	/mnt/remote-storage	cifs	 gid=users,uid=seeder,file_mode=0440,dir_mode=0750,credentials=/etc/sdpseed/credentials.txt,sec=ntlmv2,user,noserverino,nobrl,cache=loose,actimeo=30     0 0
