@@ -4,7 +4,7 @@ The SDPSeed project provides the design for a server that will:
 - Scan a remote file share periodically for new or updated "SDP Packages" (essentially, each 2-level-deep path on the share is a package)
 - Generate torrent files for packages over a certain size
 - Start seeding automatically
-- Move the torrent file to a remote server so it can be accessed by SDPFetch or another bittorrent distrobution method/client.
+- Move the torrent file to a remote server so it can be accessed by SDPFetch or another bittorrent distribution method/client.
 
 ## Operating System
 * The seedbox was built on RHEL 7.1, but implementing on any modern linux OS with should be possible.
